@@ -71,6 +71,7 @@
 
 <script>
 import Cookie from "js-cookie";
+import Swal from "sweetalert2";
 export default {
   data() {
     return {
@@ -95,6 +96,11 @@ export default {
         })
         .catch(function (error) {
           console.log(error);
+          Swal.fire({
+            title: "Erro!",
+            text: "E-mail ou senha incorretos!",
+            icon: "error",
+          });
         });
     },
   },

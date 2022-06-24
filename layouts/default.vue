@@ -42,12 +42,14 @@
               <button class="btn btn-success">Areá do Veterinario</button>
             </nuxt-link>
           </div>
-          <div v-if="auth" class="col-md-2 d-flex flex-column user mx-3">
-            <h4>{{ name }}</h4>
+          <div v-if="auth" class="col-md-2 d-flex flex-column user mx-3 mt-2">
+            <nuxt-link to="/dashboard"
+              ><h4>{{ name }}</h4></nuxt-link
+            >
             <p>Carrinho vazio</p>
           </div>
-          <div class="sair ml-5">
-            <a href="">Sair</a>
+          <div class="sair ml-5" @click="logout">
+            <a class="">Sair</a>
           </div>
         </div>
       </div>
@@ -57,14 +59,21 @@
 </template>
 
 <script>
-
+import Cookie from "js-cookie";
 export default {
   data() {
     return {
       auth: false,
-      name: '',
+      name: "",
     };
   },
+  methods: {
+    async logout() {
+      this.$cookiz.removeAll();
+       window.location.href = "login";
+    },
+  },
+
   created() {
     const token = this.$cookiz.get("_access_token");
     this.$axios
@@ -76,7 +85,7 @@ export default {
       .then((response) => {
         console.log(response.name);
         this.auth = true;
-        this.name = response.name
+        this.name = response.name;
       })
       .catch(function (error) {
         console.log(error);
