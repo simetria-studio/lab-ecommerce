@@ -77,7 +77,7 @@ export default {
   created() {
     const token = this.$cookiz.get("_access_token");
     this.$axios
-      .$get("api/auth/user", {
+      .$get("auth/user", {
         headers: {
           "access-token": token,
         }, //the token is a variable which holds the token
