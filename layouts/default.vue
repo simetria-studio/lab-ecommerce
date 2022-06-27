@@ -39,7 +39,7 @@
           </div>
           <div v-if="!auth" class="col-md-2 d-flex flex-column user mx-3">
             <nuxt-link to="/login">
-              <button class="btn btn-success">Areá do Veterinario</button>
+              <button class="btn btn-two font-sz">Areá do Veterinario</button>
             </nuxt-link>
           </div>
           <div v-if="auth" class="col-md-2 d-flex flex-column user mx-3 mt-2">
