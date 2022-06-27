@@ -10,7 +10,7 @@
       <h4>Seu Cadastro</h4>
     </div>
     <div class="block-2">
-      <nuxt-link to="animais">
+      <nuxt-link to="/animais">
         <h4>Seus Animais</h4>
       </nuxt-link>
     </div>

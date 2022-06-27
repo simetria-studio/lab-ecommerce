@@ -31,7 +31,9 @@
             </div>
           </div>
           <div>
-            <button class="btn btn-two">Novo Animal</button>
+            <nuxt-link to="/a-pages/cadastro">
+              <button class="btn btn-two">Novo Animal</button>
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -44,6 +46,25 @@
         </div>
         <div class="ml-2">
           <h4>Proprietário</h4>
+        </div>
+      </div>
+      <div class="table-body-animals">
+        <div>
+          <h4>Lilás da Loci ( teste )</h4>
+        </div>
+        <div>
+          <h4>Equina / Mangalarga Marchador</h4>
+        </div>
+        <div>
+          <h4>Loci Genética</h4>
+        </div>
+        <div class="icons">
+          <div class="mx-2">
+            <img src="~/assets/img/eye.svg" alt="" />
+          </div>
+          <div class="mx-2">
+            <img src="~/assets/img/edit.svg" alt="" />
+          </div>
         </div>
       </div>
       <div class="table-body-animals">
