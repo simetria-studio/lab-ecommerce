@@ -93,11 +93,14 @@ export default {
   methods: {
     async sendData() {
       this.$axios
-        .post("register", {
-          name: this.name,
-          email: this.email,
-          password: this.password,
-        })
+        .post(
+          "register",
+          {
+            name: this.name,
+            email: this.email,
+            password: this.password,
+          }
+        )
         .then(function (response) {
           console.log(response);
           Swal.fire({

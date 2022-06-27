@@ -41,6 +41,10 @@ body {
   font-weight: 500;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 .header {
   background: #fff;
   width: 100%;
@@ -59,9 +63,11 @@ body {
 
   }
 }
-.font-sz{
- font-size: 0.8em;
+
+.font-sz {
+  font-size: 0.8em;
 }
+
 .redes {
   h4 {
     font-size: 1em;
@@ -90,6 +96,7 @@ body {
 
 .sair {
   cursor: pointer;
+
   a {
     font-weight: 700;
     font-size: 1em;
@@ -250,9 +257,21 @@ body {
     color: #FFFFFF;
   }
 }
-.content-dash{
+
+.content-dash {
   margin-top: 1em;
-  p{
+
+  p {
     color: #674286;
+  }
+}
+
+.animais {
+  h3 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 14px;
+    letter-spacing: -0.04em;
+    color: #0F1015;
   }
 }
