@@ -35,33 +35,33 @@
 }
 
 
-$default-flat:     #b9d9f5;
-$default-shadow:   #94bfe4;
-$default-highlight:#7db3e1;
-$default-shadow2:  #6495be;
+$default-flat: #b9d9f5;
+$default-shadow: #94bfe4;
+$default-highlight: #7db3e1;
+$default-shadow2: #6495be;
 
-$black-flat:       #454545;
-$black-shadow:     #000000;
-$black-highlight:  #404040;
+$black-flat: #454545;
+$black-shadow: #000000;
+$black-highlight: #404040;
 
-$blue-flat:        #2aa9e0;
-$blue-shadow:      #1a7aa4;
-$blue-highlight:   #259ed2;
+$blue-flat: #2aa9e0;
+$blue-shadow: #1a7aa4;
+$blue-highlight: #259ed2;
 
-$orange-flat:      #eb8046;
-$orange-shadow:    #d3672d;
+$orange-flat: #eb8046;
+$orange-shadow: #d3672d;
 $orange-highlight: #e4783d;
 
-$pink-flat:        #db4286;
-$pink-shadow:      #bc3671;
-$pink-highlight:   #d23e80;
+$pink-flat: #db4286;
+$pink-shadow: #bc3671;
+$pink-highlight: #d23e80;
 
-$red-flat:         #d94134;
-$red-shadow:       #ab3329;
-$red-highlight:    #cd392c;
+$red-flat: #d94134;
+$red-shadow: #ab3329;
+$red-highlight: #cd392c;
 
-$yellow-flat:      #f2d54c;
-$yellow-shadow:    #dcb84b;
+$yellow-flat: #f2d54c;
+$yellow-shadow: #dcb84b;
 $yellow-highlight: #e8cc48;
 
 
@@ -389,13 +389,15 @@ input[type="radio"],
 input[type="radio"]:active,
 input[type="radio"]:focus,
 input[type="radio"]:checked {
-  display: none;}
+  display: none;
+}
 
 input[type="radio"]:disabled,
-input[type="radio"]:disabled + label span {
-  cursor: not-allowed;}
+input[type="radio"]:disabled+label span {
+  cursor: not-allowed;
+}
 
-input[type="radio"] + label span {
+input[type="radio"]+label span {
   display: inline-block;
   width: 45px;
   height: 45px;
@@ -411,45 +413,48 @@ input[type="radio"] + label span {
   border: none;
   -webkit-backface-visibility: hidden; // Chrome Flicker Fix
   -webkit-appearance: none;
-     -moz-appearance: none;
-      -ms-appearance: none;
-       -o-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
   -webkit-transition: .075s;
-     -moz-transition: .075s;
-      -ms-transition: .075s;
-       -o-transition: .075s;
-          transition: .075s;
-  box-shadow: 0 2px 0 #000;}
+  -moz-transition: .075s;
+  -ms-transition: .075s;
+  -o-transition: .075s;
+  transition: .075s;
+  box-shadow: 0 2px 0 #000;
+}
 
-  input[type="radio"]:checked + label span:after {
-    cursor: pointer; // Just in case!
-    display: block;
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    width: 40px;
-    height: 40px;
+input[type="radio"]:checked+label span:after {
+  cursor: pointer; // Just in case!
+  display: block;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 40px;
+  height: 40px;
 
-    border-radius: 4px;
-    line-height: 40px;
-    font-size: 16px;
-    text-align: center;
-    font-family: "proviz";
-    content: "\e25a";
-    color: rgba(255,255,255,0.3);
-    -webkit-backface-visibility: hidden; // Chrome Flicker Fix
-    -webkit-transition: .045s;
-       -moz-transition: .045s;
-        -ms-transition: .075s;
-         -o-transition: .045s;
-            transition: .045s;}
+  border-radius: 4px;
+  line-height: 40px;
+  font-size: 16px;
+  text-align: center;
+  font-family: "proviz";
+  content: "\e25a";
+  color: rgba(255, 255, 255, 0.3);
+  -webkit-backface-visibility: hidden; // Chrome Flicker Fix
+  -webkit-transition: .045s;
+  -moz-transition: .045s;
+  -ms-transition: .075s;
+  -o-transition: .045s;
+  transition: .045s;
+}
 
-    input[type="radio"]:checked + label span:active::after {
-      height: 38px;}
+input[type="radio"]:checked+label span:active::after {
+  height: 38px;
+}
 
 
-input[type="radio"].size + label span {
+input[type="radio"].size+label span {
   background: #fff;
   box-shadow: 0 2px 0 #fff;
   text-align: center;
@@ -457,37 +462,46 @@ input[type="radio"].size + label span {
   line-height: 32px;
   font-size: 16px;
   color: #674286;
-  &:hover {
-    background: #fff;
-    box-shadow: 0 2px 0 #fff;}
-  &:active {
-    top: 2px;
-    box-shadow: 0 0px 0 #fff;}
-}
 
-  input[type="radio"]:checked.size + label span {
-    content: "";
-    color: #674286;
+  &:hover {
     background: #fff;
     box-shadow: 0 2px 0 #fff;
   }
 
-  input[type="radio"]:checked.size + label span:after {
-    content: "";
-    color: rgba(255,255,255,0.3);
+  &:active {
+    top: 2px;
+    box-shadow: 0 0px 0 #fff;
+  }
+}
+
+input[type="radio"]:checked.size+label span {
+  content: "";
+  color: #674286;
+  background: #fff;
+  box-shadow: 0 2px 0 #fff;
+}
+
+input[type="radio"]:checked.size+label span:after {
+  content: "";
+  color: rgba(255, 255, 255, 0.3);
+}
+
+// Disabled
+input[type="radio"]:disabled.size+label span {
+  opacity: 0.4;
+
+  &:hover {
+    background: #fff;
+    box-shadow: 0 2px 0 #fff;
   }
 
-  // Disabled
-  input[type="radio"]:disabled.size + label span {
-    opacity: 0.4;
-    &:hover {
-      background: #fff;
-      box-shadow: 0 2px 0 #fff;}
-    &:active {
-      top: 0;
-      box-shadow: 0 2px 0 #fff;}
+  &:active {
+    top: 0;
+    box-shadow: 0 2px 0 #fff;
   }
-.checks-itens{
+}
+
+.checks-itens {
   display: flex;
   // place-content: center;
   place-items: center;
@@ -495,21 +509,69 @@ input[type="radio"].size + label span {
 
 }
 
-input{
+input {
   border: none !important;
   padding: 1.4em 1em !important;
 }
+
 label {
   color: #674286 !important;
 }
-.bt-2{
+
+.bt-2 {
   margin-top: 1.2em;
   margin-left: 1em;
 }
-.bt-3{
+
+.bt-3 {
   display: flex;
-  button{
+
+  button {
     height: 60% !important;
     margin: 1em;
   }
+}
+
+
+
+
+.page {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.page .draggable-panel {
+  width: 100%;
+  height: 100%;
+}
+
+.page .side {
+  min-width: 260px;
+  height: 100%;
+  border-left: 1px solid #DDDDDD;
+  background: #FFFFFF;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.page .side .box {
+  height: 100px;
+  background: #EEEEEE;
+  border-radius: 4px;
+  padding: 8px;
+  border: 1px solid #DDDDDD;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 20px rgba(51, 51, 51, 0.1);
+}
+
+.page .side .box:hover {
+  filter: brightness(0.9);
+}
+
+.img-teste{
+  border: solid 2px black;
 }
