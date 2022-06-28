@@ -83,15 +83,75 @@
                 <input type="text" class="form-control" id="input-1" />
               </div>
               <div class="bt-2">
-                <button class="btn btn-one" @click.prevent="next()">Próximo</button>
+                <button class="btn btn-one" @click.prevent="next()">
+                  Próximo
+                </button>
               </div>
             </div>
           </div>
           <div v-if="step === 2">
-            <h1>Step Two</h1>
-
-            <button @click.prevent="prev()">Previous</button>
-            <button @click.prevent="next()">Next</button>
+            <div class="row">
+              <div class="form-group col-md-4">
+                <label for="input-1">CPF/CNPJ</label>
+                <input type="text" class="form-control" id="input-1" />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="input-1">Proprietário do Animal</label>
+                <input type="text" class="form-control" id="input-1" />
+              </div>
+              <div class="form-group col-md-4">
+                <label for="input-1">E-mail</label>
+                <input type="text" class="form-control" id="input-1" />
+              </div>
+              <div class="form-group col-md-2">
+                <label for="input-1">Fone com DDD</label>
+                <input type="text" class="form-control" id="input-1" />
+              </div>
+              <div class="form-group col-md-2">
+                <label for="input-1">Celular</label>
+                <input type="text" class="form-control" id="input-1" />
+              </div>
+              <div class="form-group col-md-3">
+                <label for="input-1">é whatsapp?</label>
+                <input type="checkbox" class="form-control" id="input-1" />
+              </div>
+              <div class="form-group col-md-2">
+                <label for="input-1">Cep</label>
+                <input type="text" class="form-control" id="input-1" />
+              </div>
+              <div class="form-group col-md-8">
+                <label for="input-1">Endereço</label>
+                <input type="text" class="form-control" id="input-1" />
+              </div>
+              <div class="form-group col-md-4">
+                <label for="input-1">Numero</label>
+                <input type="text" class="form-control" id="input-1" />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="input-1">Complemento</label>
+                <input type="text" class="form-control" id="input-1" />
+              </div>
+              <div class="form-group col-md-3">
+                <label for="input-1">Bairro</label>
+                <input type="text" class="form-control" id="input-1" />
+              </div>
+              <div class="form-group col-md-3">
+                <label for="input-1">Cidade</label>
+                <input type="text" class="form-control" id="input-1" />
+              </div>
+              <div class="form-group col-md-2">
+                <label for="input-1">UF</label>
+                <input type="text" class="form-control" id="input-1" />
+              </div>
+              <div class="col-md-3 bt-3">
+                <button class="btn btn-two" @click.prevent="prev()">
+                  Anterior
+                </button>
+                <button class="btn btn-one" @click.prevent="next()">
+                  Próximo
+                </button>
+              </div>
+            </div>
           </div>
         </form>
       </div>
