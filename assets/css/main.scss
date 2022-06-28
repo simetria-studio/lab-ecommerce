@@ -35,6 +35,36 @@
 }
 
 
+$default-flat:     #b9d9f5;
+$default-shadow:   #94bfe4;
+$default-highlight:#7db3e1;
+$default-shadow2:  #6495be;
+
+$black-flat:       #454545;
+$black-shadow:     #000000;
+$black-highlight:  #404040;
+
+$blue-flat:        #2aa9e0;
+$blue-shadow:      #1a7aa4;
+$blue-highlight:   #259ed2;
+
+$orange-flat:      #eb8046;
+$orange-shadow:    #d3672d;
+$orange-highlight: #e4783d;
+
+$pink-flat:        #db4286;
+$pink-shadow:      #bc3671;
+$pink-highlight:   #d23e80;
+
+$red-flat:         #d94134;
+$red-shadow:       #ab3329;
+$red-highlight:    #cd392c;
+
+$yellow-flat:      #f2d54c;
+$yellow-shadow:    #dcb84b;
+$yellow-highlight: #e8cc48;
+
+
 body {
   font-family: Spartan;
   background: #F4F4F4;
@@ -351,4 +381,141 @@ a {
       place-content: end;
     }
   }
+}
+
+
+
+input[type="radio"],
+input[type="radio"]:active,
+input[type="radio"]:focus,
+input[type="radio"]:checked {
+  display: none;}
+
+input[type="radio"]:disabled,
+input[type="radio"]:disabled + label span {
+  cursor: not-allowed;}
+
+input[type="radio"] + label span {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  background: #454545;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  margin: 5px;
+  border: none;
+  -webkit-backface-visibility: hidden; // Chrome Flicker Fix
+  -webkit-appearance: none;
+     -moz-appearance: none;
+      -ms-appearance: none;
+       -o-appearance: none;
+          appearance: none;
+  -webkit-transition: .075s;
+     -moz-transition: .075s;
+      -ms-transition: .075s;
+       -o-transition: .075s;
+          transition: .075s;
+  box-shadow: 0 2px 0 #000;}
+
+  input[type="radio"]:checked + label span:after {
+    cursor: pointer; // Just in case!
+    display: block;
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 40px;
+    height: 40px;
+
+    border-radius: 4px;
+    line-height: 40px;
+    font-size: 16px;
+    text-align: center;
+    font-family: "proviz";
+    content: "\e25a";
+    color: rgba(255,255,255,0.3);
+    -webkit-backface-visibility: hidden; // Chrome Flicker Fix
+    -webkit-transition: .045s;
+       -moz-transition: .045s;
+        -ms-transition: .075s;
+         -o-transition: .045s;
+            transition: .045s;}
+
+    input[type="radio"]:checked + label span:active::after {
+      height: 38px;}
+
+/*
+  UI Styles: radio Colors
+*/
+
+
+
+
+
+
+
+
+/*
+  UI Styles: radio Sizes
+*/
+
+input[type="radio"].size + label span {
+  background: #fff;
+  box-shadow: 0 2px 0 #fff;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  line-height: 32px;
+  font-size: 16px;
+  color: #674286;
+  &:hover {
+    background: #fff;
+    box-shadow: 0 2px 0 #fff;}
+  &:active {
+    top: 2px;
+    box-shadow: 0 0px 0 #fff;}
+}
+
+  input[type="radio"]:checked.size + label span {
+    content: "";
+    color: #674286;
+    background: #fff;
+    box-shadow: 0 2px 0 #fff;
+  }
+
+  input[type="radio"]:checked.size + label span:after {
+    content: "";
+    color: rgba(255,255,255,0.3);
+  }
+
+  // Disabled
+  input[type="radio"]:disabled.size + label span {
+    opacity: 0.4;
+    &:hover {
+      background: #fff;
+      box-shadow: 0 2px 0 #fff;}
+    &:active {
+      top: 0;
+      box-shadow: 0 2px 0 #fff;}
+  }
+.checks-itens{
+  display: flex;
+  // place-content: center;
+  place-items: center;
+  margin-top: 1.1em;
+}
+
+input{
+  border: none !important;
+  padding: 1.4em 1em !important;
+}
+label {
+  color: #674286 !important;
+}
+.bt-2{
+  margin-top: 1.2em;
+  margin-left: 1em;
 }
