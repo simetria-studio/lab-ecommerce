@@ -95,7 +95,7 @@
                 <label for="input-1">CPF/CNPJ</label>
                 <input type="text" class="form-control" id="input-1" />
               </div>
-              <div class="form-group col-md-6">
+              <div class="form-group col-md-8">
                 <label for="input-1">Proprietário do Animal</label>
                 <input type="text" class="form-control" id="input-1" />
               </div>
@@ -119,7 +119,7 @@
                 <label for="input-1">Cep</label>
                 <input type="text" class="form-control" id="input-1" />
               </div>
-              <div class="form-group col-md-8">
+              <div class="form-group col-md-10">
                 <label for="input-1">Endereço</label>
                 <input type="text" class="form-control" id="input-1" />
               </div>
@@ -127,7 +127,7 @@
                 <label for="input-1">Numero</label>
                 <input type="text" class="form-control" id="input-1" />
               </div>
-              <div class="form-group col-md-6">
+              <div class="form-group col-md-8">
                 <label for="input-1">Complemento</label>
                 <input type="text" class="form-control" id="input-1" />
               </div>
@@ -143,6 +143,19 @@
                 <label for="input-1">UF</label>
                 <input type="text" class="form-control" id="input-1" />
               </div>
+              <div class="col-md-3 bt-3">
+                <button class="btn btn-two" @click.prevent="prev()">
+                  Anterior
+                </button>
+                <button class="btn btn-one" @click.prevent="next()">
+                  Próximo
+                </button>
+              </div>
+            </div>
+          </div>
+          <div v-if="step === 3">
+            <div class="row">
+              
               <div class="col-md-3 bt-3">
                 <button class="btn btn-two" @click.prevent="prev()">
                   Anterior

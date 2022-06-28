@@ -448,20 +448,6 @@ input[type="radio"] + label span {
     input[type="radio"]:checked + label span:active::after {
       height: 38px;}
 
-/*
-  UI Styles: radio Colors
-*/
-
-
-
-
-
-
-
-
-/*
-  UI Styles: radio Sizes
-*/
 
 input[type="radio"].size + label span {
   background: #fff;
@@ -506,6 +492,7 @@ input[type="radio"].size + label span {
   // place-content: center;
   place-items: center;
   margin-top: 1.1em;
+
 }
 
 input{
