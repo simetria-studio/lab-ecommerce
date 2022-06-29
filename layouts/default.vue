@@ -70,7 +70,7 @@ export default {
   methods: {
     async logout() {
       this.$cookiz.removeAll();
-       window.location.href = "login";
+       window.location.href = "/login";
     },
   },
 

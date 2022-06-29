@@ -573,5 +573,13 @@ label {
 }
 
 .img-teste{
-  border: solid 2px black;
+  position: absolute;
+}
+.img-dir{
+  width: 500px;
+  height: 500px;
+  img{
+    width: 100%;
+  }
+  position: absolute;
 }
