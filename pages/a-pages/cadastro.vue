@@ -416,12 +416,20 @@
                     />
                   </div>
                 </div>
-                <div class="d-flex justify-content-around">
-                  <div :list="list" v-for="element in list" :key="element.id">
-                    <div @click.prevent="addList(element)">
-                      <img :src="element.mark_path" alt="" />
+                <div class="">
+                  <ssr-carousel :slides-per-page='4'>
+                    <div
+                      class="slide"
+                      :list="list"
+                      v-for="element in list"
+                      :key="element.id"
+
+                    >
+                      <div @click.prevent="addList(element)">
+                        <img :src="element.mark_path" alt="" />
+                      </div>
                     </div>
-                  </div>
+                  </ssr-carousel>
                 </div>
               </div>
               <div class="col-md-7">
@@ -656,7 +664,7 @@ export default {
         inputAttributes: {
           "aria-label": "Type your message here",
         },
-        showCancelButton: true,
+        showCancelButton: false,
       }).then((value) => {
         this.list1.push({
           id: element.id,
