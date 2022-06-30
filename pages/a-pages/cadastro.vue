@@ -178,6 +178,7 @@
                   class="form-control"
                   v-model="birth_date"
                   id="input-1"
+                  v-mask="'##/##/####'"
                 />
               </div>
               <div class="form-group col-md-3">
@@ -204,11 +205,10 @@
             <div class="row">
               <div class="form-group col-md-4">
                 <label for="input-1">CPF/CNPJ</label>
-                <input
-                  type="text"
+                <the-mask
                   class="form-control"
                   v-model="vdocument"
-                  id="input-1"
+                  :mask="['###.###.###-##', '##.###.###/####-##']"
                 />
               </div>
               <div class="form-group col-md-8">
@@ -231,20 +231,18 @@
               </div>
               <div class="form-group col-md-2">
                 <label for="input-1">Fone com DDD</label>
-                <input
-                  type="text"
+                <the-mask
                   class="form-control"
                   v-model="fone"
-                  id="input-1"
+                  :mask="['(##) ####-####', '(##) #####-####']"
                 />
               </div>
               <div class="form-group col-md-2">
                 <label for="input-1">Celular</label>
-                <input
-                  type="text"
+                <the-mask
                   class="form-control"
                   v-model="cell"
-                  id="input-1"
+                  :mask="['(##) ####-####', '(##) #####-####']"
                 />
               </div>
               <div class="form-group col-md-3">
@@ -258,11 +256,10 @@
               </div>
               <div class="form-group col-md-2">
                 <label for="input-1">Cep</label>
-                <input
-                  type="text"
+                <the-mask
                   class="form-control"
                   v-model="zip_code"
-                  id="input-1"
+                  :mask="['#####-###']"
                 />
               </div>
               <div class="form-group col-md-10">
@@ -452,12 +449,9 @@
                     :x="element.x"
                     :y="element.y"
                     :ref="'myid-' + elementid"
-
                   >
                     <div>
-                      <p>
-                        {{ element.x }}, {{ element.y }}, id:{{ element.id }}
-                      </p>
+                      <p>{{ element.text }}</p>
                       <img :src="element.img" alt="" />
                     </div>
                   </vue-draggable-resizable>
@@ -489,6 +483,7 @@
 <script>
 import MenuComponent from "~/components/dashboard/MenuComponent.vue";
 import VueDraggableResizable from "vue-draggable-resizable";
+import Swal from "sweetalert2";
 
 export default {
   components: { MenuComponent, VueDraggableResizable },
@@ -534,6 +529,25 @@ export default {
         city: "",
         state: "",
       },
+      resenha_animals: [
+        {
+          resenha: "right_side",
+          photo: "",
+          brand_id: "1",
+          localization: [
+            {
+              id: "",
+              x: "",
+              y: "",
+            },
+          ],
+          description: [
+            {
+              Description: "Um array de descrição",
+            },
+          ],
+        },
+      ],
     };
   },
   created() {
@@ -545,7 +559,6 @@ export default {
         }, //the token is a variable which holds the token
       })
       .then((response) => {
-        console.log(response.data);
         this.list = response.data;
       })
       .catch(function (error) {
@@ -567,6 +580,9 @@ export default {
     },
     submit() {
       const token2 = this.$cookiz.get("_access_token");
+      let data = new Date(this.birth_date);
+      let dataFormatada =
+        data.getFullYear() + "-" + (data.getMonth() + 1) + "-" + data.getDate();
 
       const dados = {
         register_number_brand: this.register_number_brand,
@@ -581,7 +597,7 @@ export default {
         city: this.city,
         state: this.state,
         number_existing_equines: this.number_existing_equines,
-        birth_date: this.birth_date,
+        birth_date: dataFormatada,
         fur: this.fur,
         description: this.description,
         owner: {
@@ -599,7 +615,21 @@ export default {
           city: this.city,
           state: this.state,
         },
+        resenha_animals: [
+          {
+            resenha: "right_side",
+            photo: "",
+            brand_id: "1",
+            localization: this.list1,
+            description: [
+              {
+                Description: "Um array de descrição",
+              },
+            ],
+          },
+        ],
       };
+
       const headerz = {
         headers: {
           "access-token": token2,
@@ -619,30 +649,34 @@ export default {
         });
     },
     addList(element) {
-      this.list1.push({
-        id: element.id,
-        name: element.mark_name,
-        img: element.mark_path,
-        y: 0,
-        x: 0,
+      Swal.fire({
+        input: "textarea",
+        inputLabel: "Marcas",
+        inputPlaceholder: "Escreva aqui...",
+        inputAttributes: {
+          "aria-label": "Type your message here",
+        },
+        showCancelButton: true,
+      }).then((value) => {
+        this.list1.push({
+          id: element.id,
+          name: element.mark_name,
+          img: element.mark_path,
+          y: 0,
+          x: 0,
+          text: value.value,
+        });
       });
     },
-    // onResize: function (x, y, width, height) {
-    //   this.x = x;
-    //   this.y = y;
-    //   this.width = width;
-    //   this.height = height;
-    // },
+
     onDrag: function (elementid) {
-      var x = this.$refs['myid-'+elementid][0].left;
-      var y = this.$refs['myid-'+elementid][0].top;
-      if(this.$refs['myid-'+elementid].length > 0){
+      var x = this.$refs["myid-" + elementid][0].left;
+      var y = this.$refs["myid-" + elementid][0].top;
+      if (this.$refs["myid-" + elementid].length > 0) {
         this.list1[elementid].x = x;
         this.list1[elementid].y = y;
       }
-
     },
-
   },
 };
 </script>

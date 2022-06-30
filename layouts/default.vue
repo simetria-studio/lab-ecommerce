@@ -83,7 +83,7 @@ export default {
         }, //the token is a variable which holds the token
       })
       .then((response) => {
-        console.log(response.name);
+  
         this.auth = true;
         this.name = response.name;
       })
