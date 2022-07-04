@@ -399,9 +399,10 @@
                     <div class="form-group">
                       <input
                         type="file"
-                        class="form-control-file"
-                        id="exampleFormControlFile1"
+                        accept="image/*"
+                        @change="uploadImage"
                       />
+                      <img width="150"  :src="previewImage" class="img-preview"/>
                     </div>
                   </div>
                 </div>
@@ -417,13 +418,12 @@
                   </div>
                 </div>
                 <div class="">
-                  <ssr-carousel :slides-per-page='4'>
+                  <ssr-carousel :slides-per-page="4">
                     <div
                       class="slide"
                       :list="list"
                       v-for="element in list"
                       :key="element.id"
-
                     >
                       <div @click.prevent="addList(element)">
                         <img :src="element.mark_path" alt="" />
@@ -492,9 +492,10 @@
 import MenuComponent from "~/components/dashboard/MenuComponent.vue";
 import VueDraggableResizable from "vue-draggable-resizable";
 import Swal from "sweetalert2";
+import VueBase64FileUpload from "vue-base64-file-upload";
 
 export default {
-  components: { MenuComponent, VueDraggableResizable },
+  components: { MenuComponent, VueDraggableResizable, VueBase64FileUpload },
   middleware: "authenticated",
 
   data() {
@@ -556,6 +557,7 @@ export default {
           ],
         },
       ],
+      previewImage: undefined,
     };
   },
   created() {
@@ -585,6 +587,15 @@ export default {
     direito() {
       this.lado = "d";
       this.step++;
+    },
+    uploadImage(e) {
+      const [image] = e.target.files;
+      const reader = new FileReader();
+      reader.readAsDataURL(image);
+      reader.onload = (e) => {
+        this.previewImage = e.target.result;
+        console.log(this.previewImage);
+      };
     },
     submit() {
       const token2 = this.$cookiz.get("_access_token");
@@ -626,7 +637,7 @@ export default {
         resenha_animals: [
           {
             resenha: "right_side",
-            photo: "",
+            photo: this.previewImage,
             brand_id: "1",
             localization: this.list1,
             description: [

@@ -48,15 +48,15 @@
           <h4>Proprietário</h4>
         </div>
       </div>
-      <div class="table-body-animals">
+      <div class="table-body-animals" v-for="animal in animais" :key="animal.id">
         <div>
-          <h4>Lilás da Loci ( teste )</h4>
+          <h4>{{ animal.animal_name }}</h4>
         </div>
         <div>
-          <h4>Equina / Mangalarga Marchador</h4>
+          <h4>{{ animal.especies }}/{{ animal.breed }}</h4>
         </div>
         <div>
-          <h4>Loci Genética</h4>
+          <h4>{{ animal.owner.owner_name }}</h4>
         </div>
         <div class="icons">
           <div class="mx-2">
@@ -67,25 +67,7 @@
           </div>
         </div>
       </div>
-      <div class="table-body-animals">
-        <div>
-          <h4>Lilás da Loci ( teste )</h4>
-        </div>
-        <div>
-          <h4>Equina / Mangalarga Marchador</h4>
-        </div>
-        <div>
-          <h4>Loci Genética</h4>
-        </div>
-        <div class="icons">
-          <div class="mx-2">
-            <img src="~/assets/img/eye.svg" alt="" />
-          </div>
-          <div class="mx-2">
-            <img src="~/assets/img/edit.svg" alt="" />
-          </div>
-        </div>
-      </div>
+
     </div>
   </div>
 </template>
@@ -94,5 +76,25 @@ import MenuComponent from "~/components/dashboard/MenuComponent.vue";
 export default {
   components: { MenuComponent },
   middleware: "authenticated",
+  data() {
+    return {
+      animais: [],
+    };
+  },
+  created() {
+    const token = this.$cookiz.get("_access_token");
+    this.$axios
+      .$get("animal", {
+        headers: {
+          "access-token": token,
+        }, //the token is a variable which holds the token
+      })
+      .then((response) => {
+        this.animais = response.data;
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  },
 };
 </script>
