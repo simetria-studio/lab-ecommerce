@@ -572,14 +572,39 @@ label {
   filter: brightness(0.9);
 }
 
-.img-teste{
+.img-teste {
   position: absolute;
 }
-.img-dir{
+
+.img-dir {
   width: 500px;
   height: 500px;
-  img{
+
+  img {
     width: 100%;
   }
+
   position: absolute;
+}
+
+.animal-list {
+  display: flex;
+  margin: 2em 0;
+
+  h4 {
+    font-weight: 700;
+    font-size: 14.3038px;
+    line-height: 14px;
+    padding: 1em 0;
+    letter-spacing: -0.04em;
+    text-align: center;
+    color: #000000;
+
+  }
+}
+
+.animal-img {
+  background: #fff;
+  padding: 25px;
+  margin: 0 1em;
 }

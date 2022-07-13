@@ -4,7 +4,9 @@
       <h4>Seus Pedidos</h4>
     </div>
     <div class="block-2">
-      <h4>Lista de Exames</h4>
+      <nuxt-link to="/exames">
+        <h4>Lista de Exames</h4>
+      </nuxt-link>
     </div>
     <div class="block-1">
       <h4>Seu Cadastro</h4>
