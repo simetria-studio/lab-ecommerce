@@ -608,3 +608,165 @@ label {
   padding: 25px;
   margin: 0 1em;
 }
+
+.exames-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, (minmax(150px, 1fr)));
+  gap: 10px;
+  margin: 1em 0;
+
+  .exame-body {
+    background: #fff;
+
+    .price {
+      background: #DCDCDC;
+      width: 100%;
+      padding: 1em;
+      margin: 0 !important;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: 11.8276px;
+      line-height: 12px;
+      text-align: center;
+      letter-spacing: -0.04em;
+      color: #000000;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 11.8276px;
+      line-height: 19px;
+      text-align: center;
+      letter-spacing: -0.04em;
+      color: #000000;
+    }
+
+    h4 {
+      font-weight: 700;
+      font-size: 25.2323px;
+      line-height: 25px;
+      text-align: center;
+      letter-spacing: -0.04em;
+      margin: 0 !important;
+      color: #000000;
+    }
+  }
+}
+
+.detail {
+  width: 35%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #fff;
+  height: 100vh;
+  z-index: 100;
+
+  .header-detail {
+    text-align: center;
+    background-color: #674286;
+    color: #fff;
+    padding: 2em;
+    text-transform: uppercase;
+
+    h4 {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 23px;
+      letter-spacing: -0.04em;
+    }
+  }
+
+  .body-d {
+    display: flex;
+    place-content: center;
+    margin: 5em 0;
+  }
+
+  .body-detail {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, (minmax(200px, 1fr)));
+
+    .price-e {
+      text-align: center !important;
+    }
+
+    h3 {
+      font-weight: 700;
+      font-size: 25.2323px;
+      line-height: 25px;
+      /* identical to box height, or 100% */
+
+      text-align: center;
+      letter-spacing: -0.04em;
+
+      color: #000000;
+    }
+
+    p {
+      font-weight: 700;
+      font-size: 11.8276px;
+      line-height: 19px;
+      /* identical to box height, or 159% */
+
+      letter-spacing: -0.04em;
+
+      color: #000000;
+    }
+
+    h4 {
+      font-weight: 700;
+      font-size: 11.8276px;
+      line-height: 19px;
+      /* or 159% */
+      border: solid 1px #674286;
+      text-align: center;
+      letter-spacing: -0.04em;
+      padding: 1em;
+      color: #000000;
+    }
+  }
+}
+
+.footer-exa {
+  padding: 0 2em;
+
+  h4 {
+    font-weight: 400;
+    font-size: 11.8276px;
+    line-height: 19px;
+    letter-spacing: -0.04em;
+    color: #000000;
+  }
+
+  p {
+    font-weight: 700;
+    font-size: 11.8276px;
+    line-height: 19px;
+    letter-spacing: -0.04em;
+    color: #000000;
+  }
+}
+
+.fade-less {
+  background: rgba(0, 0, 0, 0.473);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 90;
+  top: 0;
+  left: 0;
+}
+
+.heading {
+  h2 {
+    font-size: 20px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.04em;
+    color: #0F1015;
+  }
+}
