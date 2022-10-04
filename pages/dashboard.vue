@@ -34,7 +34,7 @@ import MenuComponent from "~/components/dashboard/MenuComponent.vue";
 
 export default {
   components: { MenuComponent },
-  middleware: "authenticated",
+  // middleware: "authenticated",
 
 };
 </script>

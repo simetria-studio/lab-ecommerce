@@ -496,7 +496,7 @@ import VueBase64FileUpload from "vue-base64-file-upload";
 
 export default {
   components: { MenuComponent, VueDraggableResizable, VueBase64FileUpload },
-  middleware: "authenticated",
+  // middleware: "authenticated",
 
   data() {
     return {

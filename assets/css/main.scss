@@ -770,3 +770,40 @@ label {
     color: #0F1015;
   }
 }
+
+.animal-e-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, (minmax(200px, 1fr)));
+  gap: 10px;
+
+  .animal-list {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 14px;
+      /* identical to box height, or 90% */
+      padding: 0.5em;
+      letter-spacing: -0.04em;
+
+      color: #000000;
+
+    }
+
+    h4 {
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 18px;
+      /* or 120% */
+      padding: 0.5em;
+      display: flex;
+      align-items: center;
+      letter-spacing: -0.04em;
+
+      color: #646265;
+    }
+  }
+}
